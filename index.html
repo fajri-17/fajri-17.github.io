@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,26 +8,28 @@
    <title>Kalkulator Katik</title>
    <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+
+<body onload="displayTriangleArea()" id="body">
    <div class="container card shadow">
       <header>
          <div class="text-header">
             <h1>Welcome to Katik</h1>
-            <p> Hai Sobat, Selamat datang di Katik :) <br> Sebuah web apps sederhana yang bertugas untuk menghitung nilai luas dan keliling bangun datar</p>
+            <p> Hai Sobat, Selamat datang di Katik :) <br> Sebuah web apps sederhana yang bertugas untuk menghitung
+               nilai luas dan keliling bangun datar</p>
          </div>
          <nav>
-            <button class="button" onclick="displayTriangle()">
+            <button class="button" onclick="displayTriangleArea()">
                <span class="button_lg">
-                   <span class="button_sl"></span>
-                   <span class="button_text">Segitiga</span>
+                  <span class="button_sl"></span>
+                  <span class="button_text">Segitiga</span>
                </span>
-           </button>
-           <button class="button" onclick="displayJajarGenjang()">
-            <span class="button_lg">
-                <span class="button_sl"></span>
-                <span class="button_text">Jajar Genjang</span>
-            </span>
-        </button>
+            </button>
+            <button class="button" onclick="displayParallelogramArea()">
+               <span class="button_lg">
+                  <span class="button_sl"></span>
+                  <span class="button_text">Jajar Genjang</span>
+               </span>
+            </button>
          </nav>
       </header>
 
@@ -34,83 +37,85 @@
          <div class="options" id="option">
             <button class="button" id="click_change_1">
                <span class="button_lg">
-                   <span class="button_sl"></span>
-                   <span class="button_text" id="change_1">Luas Segitiga</span>
+                  <span class="button_sl"></span>
+                  <span class="button_text" id="change_1">Luas Segitiga</span>
                </span>
-           </button>
-           <button class="button" id="click_change_2">
-            <span class="button_lg">
-                <span class="button_sl"></span>
-                <span class="button_text" id="change_2">Keliling Segitiga</span>
-            </span>
-        </button>
+            </button>
+            <button class="button" id="click_change_2">
+               <span class="button_lg">
+                  <span class="button_sl"></span>
+                  <span class="button_text" id="change_2">Keliling Segitiga</span>
+               </span>
+            </button>
          </div>
          <div class="card">
             <div class="text-title">
-               <h1 id="title">Luas Segitiga</h1>
+               <h1 id="title"></h1>
             </div>
             <div class="card-image">
                <img id="image" src="/assets/img/segitiga.png" alt="" height="150px">
             </div>
             <div class="card-content">
-               <p id="text_1">Rumus luas Segitiga yaitu:</p>
-               <p id="text_2" align="center">L = 1/2 x a x t</p>
-               <p>Di mana: </p> 
-               <p id="text_3">L = Luas</p> 
-               <p id="text_4">a = Panjang Alas</p> 
-               <p id="text_5">t = Tinggi</p>
+               <p id="text_1"></p>
+               <p id="text_2" align="center"></p>
+               <p>Di mana: </p>
+               <p id="text_3"></p>
+               <p id="text_4"></p>
+               <p id="text_5"></p>
+               <p id="text_6"></p>
             </div>
 
 
             <div class="container-form">
-               <h1 id="hitung_title" align="center">Hitung Luas Segitiga</h1>
+               <h1 id="title_calc" align="center"></h1>
                <form onsubmit="return false">
                   <div class="inputbox">
-                     <input required="required" id="input_one" type="number" oninvalid="this.setCustomValidity('inputan nilai berupa angka')">
-                     <span id="nilai_1">Nilai Alas</span>
+                     <input required="required" id="input_one" type="number">
+                     <span id="label_value_1"></span>
                      <i></i>
-                 </div>
-                 <div class="inputbox">
-                     <input required="required" type="number" id="input_two" oninvalid="this.setCustomValidity('inputan nilai berupa angka')">
-                     <span id="nilai_2">Nilai Tinggi</span>
+                  </div>
+                  <div class="inputbox">
+                     <input required="required" type="number" id="input_two">
+                     <span id="label_value_2"></span>
                      <i></i>
-                 </div>
-                 <div class="inputbox" id="input_none">
-                     <input required="required" type="number" id="input_three" oninvalid="this.setCustomValidity('inputan nilai berupa angka')">
-                     <span id="nilai_3">Nilai Tinggi</span>
+                  </div>
+                  <div class="inputbox" id="input_none">
+                     <input required="required" type="number" id="input_three">
+                     <span id="label_value_3"></span>
                      <i></i>
-                 </div>
-                 <br>
-                 <div class="button-action">
-                     <button class="button" id="hitung" onclick="triangleArea()">
+                  </div>
+                  <br>
+                  <div class="button-action">
+                     <button class="button" id="run_calc">
                         <span class="button_lg">
                            <span class="button_sl"></span>
                            <span class="button_text">Hitung</span>
                         </span>
                      </button>
-                 </div>
-                 </div>
-                 </div>
-               </form>
-
-               <div class="button-reset">
-                  <button class="button" onclick="reset()" id="reset
-               ">
-                  <span class="button_lg">
-                     <span class="button_sl"></span>
-                     <span class="button_text">Reset</span>
-                  </span>
-               </button>
-               </div>
-
-               <div>
-                  <p id="result"></p>
-               </div>
+                  </div>
             </div>
          </div>
-      </main>
+         </form>
+
+         <div class="button-reset">
+            <button class="button" onclick="reset()" id="reset
+               ">
+               <span class="button_lg">
+                  <span class="button_sl"></span>
+                  <span class="button_text">Reset</span>
+               </span>
+            </button>
+         </div>
+
+         <div>
+            <p id="result"></p>
+         </div>
+   </div>
+   </div>
+   </main>
    </div>
 
    <script src="/js/index.js"></script>
 </body>
+
 </html>
